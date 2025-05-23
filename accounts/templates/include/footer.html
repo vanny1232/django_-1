@@ -1,0 +1,9 @@
+{% load static %}
+<div class="row">
+            <div class="col-lg-12 border">
+            {% for Footer in Footer %}
+
+                <img src="{{Footer.ImageURL.url}}" alt="BANNER" width="100%">
+            {% endfor %}
+            </div>
+        </div>  

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% include "include/benner.html" %}
+         {% include "include/menu.html" %}
+
+          {% include "include/slile_show.html" %}
+
+          
+        <div class="row">
+            {% include "include/sile_righ.html" %}
+
+            <div class="col-lg-8 border">Main</div>
+            {% include "include/sile_righ.html" %}
+        </div>
+        {% include "include/footer.html" %}
+    </div>
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js'%}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

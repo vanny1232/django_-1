@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:hover{
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>User Get</h1>
+    {{get.id}}<br/>
+    {{get.name}}<br/>
+
+    <h1>User exists</h1>
+    {% if filteruser %}
+    <p>Is found</p>
+    {% else %}
+    <p>Not found</p>
+    {% endif %}
+    
+    <h1>User Count</h1>
+    {{usercount}}
+    <h1>User  first</h1>
+
+    {{  lastusr.id }} <br/>
+    {{  lastusr.name }} <br/>
+    {{  lastusr.phone }}<br/>
+    {{  lastusr.email }}<br/>
+    {{  lastusr.date_created }}<br/>
+    <hr>
+    <h1>User  first</h1>
+
+    {{  userfis.id }} <br/>
+    {{  userfis.name }} <br/>
+    {{  userfis.phone }}<br/>
+    {{  userfis.email }}<br/>
+    {{  userfis.date_created }}<br/>
+    <hr>
+   
+    <h1>User Oder By - id</h1>
+    {% for  oderbyiddoc  in  oderbyiddoc %}
+    {{  oderbyiddoc.id }} <br/>
+    {{  oderbyiddoc.name }} <br/>
+    {{  oderbyiddoc.phone }}<br/>
+    {{  oderbyiddoc.email }}<br/>
+    {{  oderbyiddoc.date_created }}<br/>
+    <hr>
+    {% endfor %}
+    <h1>User Oder By id</h1>
+    {% for oderbyid  in oderbyid %}
+    {{ oderbyid.id }} <br/>
+    {{ oderbyid.name }} <br/>
+    {{ oderbyid.phone }}<br/>
+    {{ oderbyid.email }}<br/>
+    {{ oderbyid.date_created }}<br/>
+    <hr>
+    {% endfor %}
+    <h1>User exclude</h1>
+    {% for cusex  in cusex %}
+    {{ cusex.id }} <br/>
+    {{ cusex.name }} <br/>
+    {{ cusex.phone }}<br/>
+    {{ cusex.email }}<br/>
+    {{ cusex.date_created }}<br/>
+    <hr>
+    {% endfor %}
+    <h1>Select All</h1>
+    {% for customer  in customer %}
+    <a href="{%url 'index' customer.id %}">Get user</a>
+    {{ customer.id }} <br/>
+    {{ customer.name }} <br/>
+    {{ customer.phone }}<br/>
+    {{ customer.email }}<br/>
+    {{ customer.date_created }}<br/>
+    <hr>
+    {% endfor %}
+</body>
+</html>
