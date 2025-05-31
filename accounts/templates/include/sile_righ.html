@@ -1,5 +1,7 @@
         {% load static %}
         <div class="col-lg-2 border">
-                <img src="{% static 'img/Ads1.jpg' %}" alt="BANNER" width="100%">
-                <img src="{% static 'img/Ads2.jpg' %}" alt="BANNER" width="100%">
+              {% for Slide_Right in Slide_Right %}
+
+                <img src="{{Slide_Right.ImageURL.url}}" alt="BANNER" width="100%">
+            {% endfor %}
             </div>

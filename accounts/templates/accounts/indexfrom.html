@@ -18,7 +18,13 @@
         <div class="row">
             {% include "include/sile_righ.html" %}
 
-            <div class="col-lg-8 border">Main</div>
+            <div class="col-lg-8 border">
+                {% block content %}
+                    <div class="col-lg-8 border">
+                        About
+                    </div>
+                {% endblock  %}
+            </div>
             {% include "include/sile_righ.html" %}
         </div>
         {% include "include/footer.html" %}
