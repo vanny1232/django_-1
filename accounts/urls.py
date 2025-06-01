@@ -9,5 +9,6 @@ urlpatterns = [
     path('product/',views.products,name='product'),
     path('index/',views.IndexViews,name='index'),
     path('index/<int:id>',views.IndexViews,name='index'),
+    path('menus/<int:id>',views.MenuDetail,name='menu'),
     
 ]

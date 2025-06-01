@@ -9,25 +9,31 @@
 </head>
 <body>
     <div class="container">
-        {% include "include/benner.html" %}
-         {% include "include/menu.html" %}
+        {% block header %}
+                {% include "include/benner.html" %}
+                {% include "include/menu.html" %}
 
-          {% include "include/slile_show.html" %}
-
-          
+                {% include "include/slile_show.html" %}
+                {% endblock  %}
         <div class="row">
-            {% include "include/sile_righ.html" %}
+            {% block sile_righ %}
+                 {% include "include/sile_righ.html" %}
+            {% endblock  %}
 
             <div class="col-lg-8 border">
                 {% block content %}
-                    <div class="col-lg-8 border">
-                        About
-                    </div>
+                <div class="col-lg-8 border">
+                </div>
                 {% endblock  %}
+
             </div>
-            {% include "include/sile_righ.html" %}
+            {% block  Slide_Left %}
+                {% include "include/sile_righ.html" %}
+            {% endblock  %}
         </div>
+        {% block Footer %}
         {% include "include/footer.html" %}
+        {% endblock  %}
     </div>
     <script src="{% static 'js/jquery-3.2.1.slim.min.js'%}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>

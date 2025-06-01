@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-sk4j*o^0@adyc+!&d&$j2qwl!mxj-gt^%9bf)!p=y=@=&ojqh2
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "c5f7-36-37-198-57.ngrok-free.app",
+    # "localhost",
+    # "127.0.0.1",
+    # "c5f7-36-37-198-57.ngrok-free.app",
 ]
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'import_export'
+    ,'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'all',
+        'skin':'moono',
+        'codeSnippet_theme':'monokai',
+        'extraPlugins':','.join(
+            [
+                'codesnippet',
+                'widget',
+                'dialog'
+            ]
+        )
+    },
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

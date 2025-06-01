@@ -19,7 +19,11 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li>
+                            {% for Menu in Menu %}
                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'menu' Menu.id %}">{{ Menu.MenuNameEN }}</a>
+                            {% endfor %}
+                            {% comment %} <li class="nav-item">
                                 <a class="nav-link" href="{% url "About" %}">About Us</a>
                             </li>
                             <li class="nav-item">
@@ -27,8 +31,8 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Promotion</a>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> {% endcomment %}
+                            {% comment %} <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Product
@@ -40,7 +44,8 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Accessories</a>
                                 </div>
-                            </li>
+                            </li> {% endcomment %}
+                          
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Login</a>
                             </li>

@@ -23,3 +23,5 @@ class CustomerAdmin(ExportActionMixin,admin.ModelAdmin):
 admin.site.register(models.Customer, CustomerAdmin)
 admin.site.register(models.Image)
 admin.site.register(models.ImageType)
+admin.site.register(models.Menu)
+admin.site.register(models.MenuDetail)

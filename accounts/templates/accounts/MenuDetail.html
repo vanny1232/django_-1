@@ -1,0 +1,7 @@
+{% extends "accounts/indexfrom.html" %}
+{% block content %}
+    {% for menu_detail in menu_detail %}
+    {{menu_detail.Description |safe}}
+    {% endfor %}
+    
+{% endblock  %}

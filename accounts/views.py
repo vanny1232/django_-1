@@ -50,7 +50,11 @@ def IndexViewsHome(request):
     Slide_Left= models.Image.objects.filter(ImageTypeID=4)
     Slide_Right = models.Image.objects.filter(ImageTypeID=5)
     Footer = models.Image.objects.filter(ImageTypeID=6)
+
+    Menu = models.Menu.objects.all()
+
     context ={
+        'Menu':Menu,
         'Benner':Benner,
         'Logo':Logo,
         'Slide_Show':Slide_Show,
@@ -61,6 +65,32 @@ def IndexViewsHome(request):
     }
     return render(request,"accounts/indexfrom.html",context)
 
+
+def MenuDetail(request,id):
+
+    menu_detail = models.MenuDetail.objects.filter(MenuID=id)
+    Benner = models.Image.objects.filter(ImageTypeID=1)
+    Logo = models.Image.objects.filter(ImageTypeID=2)
+    Slide_Show = models.Image.objects.filter(ImageTypeID=3)
+    Slide_Left= models.Image.objects.filter(ImageTypeID=4)
+    Slide_Right = models.Image.objects.filter(ImageTypeID=5)
+    Footer = models.Image.objects.filter(ImageTypeID=6)
+
+    Menu = models.Menu.objects.all()
+
+    context ={
+        'Menu':Menu,
+        'Benner':Benner,
+        'Logo':Logo,
+        'Slide_Show':Slide_Show,
+        'Slide_Left':Slide_Left,
+        'Slide_Right':Slide_Right,
+        'Footer':Footer,
+         'menu_detail':menu_detail
+
+    }
+ 
+    return render(request,"accounts/MenuDetail.html",context)
 
 def Aboutus(request):
     return render(request,"accounts/aboutas.html")
