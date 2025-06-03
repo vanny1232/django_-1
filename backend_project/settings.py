@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'import_export'
-    ,'ckeditor'
+    'import_export',
+    'ckeditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
