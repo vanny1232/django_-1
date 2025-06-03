@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     # "127.0.0.1",
     # "c5f7-36-37-198-57.ngrok-free.app",
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True 
 
 # Application definition
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'import_export',
     'ckeditor',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'backend_project.urls'
 

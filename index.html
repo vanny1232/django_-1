@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Categories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .category-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .category-name {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Product Categories</h2>
+  <div class="category-container" id="categoryContainer">
+    <!-- Cards will be inserted here by JavaScript -->
+  </div>
+
+  <script>
+    // Fetch the categories from Django API
+    fetch('http://127.0.0.1:8000/api/category/')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('categoryContainer');
+        data.forEach(category => {
+          const card = document.createElement('div');
+          card.className = 'category-card';
+
+          card.innerHTML = `
+            <img src="${category.categoryImage}" alt="${category.categoryName}">
+            <div class="category-name">${category.categoryName.replace('_', ' ')}</div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching categories:', error);
+      });
+  </script>
+
+</body>
+</html>

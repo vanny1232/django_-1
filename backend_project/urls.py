@@ -24,4 +24,5 @@ urlpatterns = [
     path('',include('accounts.urls')),
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path('ogani/', include('accounts.urls_ogani')),
+    path('api/', include('accounts.urls_api')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

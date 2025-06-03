@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import models
-
-
 def home(request):
     return render(request,'Ogani/index.html')
 
@@ -33,3 +31,7 @@ def blogDetails(request):
 
 def about(request):
     return render(request, 'Ogani/aboutUs.html')
+
+
+
+
