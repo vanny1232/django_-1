@@ -14,7 +14,7 @@ def shopingCart(request):
 
 
 def shopingGrid(request):
-    return render(request, 'Ogani/shoping-grid.html')
+    return render(request, 'Ogani/shop-grid.html')
 
 def contact(request):
     return render(request, 'Ogani/contact.html')
